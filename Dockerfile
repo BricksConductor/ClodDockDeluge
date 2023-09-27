@@ -9,4 +9,4 @@ deluged -c /etc/config/deluge/' > /tmp/start.sh
 
 EXPOSE 8112 58846 58946 58946/udp
 
-CMD ["/tmp/start.sh"]
+CMD ["deluge-web", "--fork"]
