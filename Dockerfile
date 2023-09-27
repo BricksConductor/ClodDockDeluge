@@ -6,4 +6,4 @@ COPY bomb.conf /config/deluge/core.conf=
 
 EXPOSE 8112 58846 58946 58946/udp
 
-CMD "deluge-web --fork && deluged -c /config/deluge/"
+CMD ["deluge-web", "--fork"]
