@@ -5,8 +5,8 @@ RUN mkdir -p /config/deluge
 COPY bomb.conf /config/deluge/core.conf
 RUN echo '#!/bin/bash\n\
 deluge-web --fork\n\
-deluged -c /config/deluge/' > $PATH/start.sh
+deluged -c /config/deluge/' > /tmp/start.sh
 
 EXPOSE 8112 58846 58946 58946/udp
 
-CMD ["$PATH/start.sh"]
+CMD ["/tmp/start.sh"]
