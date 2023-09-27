@@ -6,4 +6,6 @@ RUN echo '#!/bin/bash\n\
 nohup deluged -c bomb.conf &>/dev/null &\n\
 deluge-web -c bomb.conf --fork' > /start.sh && chmod +x /start.sh
 
+EXPOSE 8112 
+
 CMD ["/start.sh"]
