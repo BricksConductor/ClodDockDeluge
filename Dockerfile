@@ -6,8 +6,8 @@ COPY bomb.conf /config/deluge/core.conf
 
 
 RUN echo '#!/bin/bash\n\
-nohup deluged -c /config/deluge/ &>/dev/null &\n\
-deluge-web -c \tmp\ --fork' > /start.sh && chmod +x /start.sh
+deluge-web -c \tmp\ --fork \
+deluged -c /config/deluge/'> /start.sh && chmod +x /start.sh
 
 EXPOSE 8112 58846 58946 58946/udp
 
